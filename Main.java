@@ -48,7 +48,15 @@ public class Main {
                     System.out.println(separator);
                 break;
                 case 2:
-
+                    System.out.print(separator);
+                    if (products.size() == 0) {
+                        System.out.println("Lista de produtos vazia...");
+                    } else {
+                        for (int i = 0;i < products.size();i++){
+                            int index = i + 1;
+                            System.out.println("[ " + index + " ] " + products.get(i) + " | " + totalOfProducts.get(i) + " | " + values.get(i));
+                        }
+                    }
                 break;
                 case 3:
                 break;
