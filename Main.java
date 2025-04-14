@@ -28,8 +28,35 @@ public class Main {
 
             switch (taskId) {
                 case 1:
+                    System.out.print("\n");
+                    System.out.print(separator);
+                    System.out.print("Digite o nome do produto que deseja adicionar: ");
+                    productName = console.nextLine();
+                    products.add(productName);
+                    System.out.print("Digite a quantidade inicial desse produto: ");
+                    totalOfProduct = console.nextInt();
+                    totalOfProducts.add(totalOfProduct);
+                    System.out.print("Digite o valor desse produto: ");
+                    valueOfProduct = console.nextDouble();
+                    values.add(valueOfProduct );
+                    System.out.print("\n");
+                    System.out.print(separator);
+                    System.out.println("Adicionado a lista de produtos: \n" +
+                            productName + "|" +
+                            totalOfProduct + "|" +
+                            valueOfProduct);
+                    System.out.println(separator);
                 break;
                 case 2:
+                    System.out.print(separator);
+                    if (products.size() == 0) {
+                        System.out.println("Lista de produtos vazia...");
+                    } else {
+                        for (int i = 0;i < products.size();i++){
+                            int index = i + 1;
+                            System.out.println("[ " + index + " ] " + products.get(i) + " | " + totalOfProducts.get(i) + " | " + values.get(i));
+                        }
+                    }
                 break;
                 case 3:
                 break;
