@@ -59,6 +59,44 @@ public class Main {
                     }
                 break;
                 case 3:
+                    System.out.println(separator);
+                    System.out.println("1 - Remover produto do estoque.\n" +
+                            "2 - Alterar valor.\n" +
+                            "3 - Alterar quantidade.\n");
+                    System.out.print("Digite a opção que deseja efetuar.");
+                    int taskId2 = console.nextInt();
+                    console.nextLine();
+                    System.out.print("Informe o produto o ID do Produto que deseja realizar alterações: ");
+                    int productId = console.nextInt() - 1;
+                    console.nextLine();
+                    String currentProduct = products.get(productId);
+                    if (productId < products.size()) {
+                        switch (taskId2) {
+                            case 1:
+                                products.remove(products.get(productId));
+                                totalOfProducts.remove(totalOfProducts.get(productId));
+                                values.remove(values.get(productId));
+                                System.out.println(currentProduct + " removido com sucesso.");
+                            break;
+                            case 2:
+                                System.out.print("Digite o novo valor para " + currentProduct + " : ");
+                                Double newValue = console.nextDouble();
+                                if (newValue != values.get(productId)) {
+                                    values.set(productId, newValue);
+                                    System.out.println("Valor de "+ currentProduct + " alterado com sucesso.");
+                                } else {
+                                    System.out.println("Novo valor igaul o valor atual.\n" +
+                                            "Tente novamente.");
+                                }
+                            break;
+                            case 3:
+                            break;
+                        }
+                    } else {
+                        System.out.println("ID inválido.");
+                    }
+
+
                 break;
                 default:
                     System.out.println("Tarefa: " + taskId + " não localizada...\n" +
