@@ -32,20 +32,24 @@ public class Main {
                     System.out.print(separator);
                     System.out.print("Digite o nome do produto que deseja adicionar: ");
                     productName = console.nextLine();
-                    products.add(productName);
-                    System.out.print("Digite a quantidade inicial desse produto: ");
-                    totalOfProduct = console.nextInt();
-                    totalOfProducts.add(totalOfProduct);
-                    System.out.print("Digite o valor desse produto: ");
-                    valueOfProduct = console.nextDouble();
-                    values.add(valueOfProduct );
-                    System.out.print("\n");
-                    System.out.print(separator);
-                    System.out.println("Adicionado a lista de produtos: \n" +
-                            productName + " | " +
-                            totalOfProduct + " | " +
-                            valueOfProduct);
-                    System.out.println(separator);
+                    if (!(products.contains(productName))) {
+                        products.add(productName);
+                        System.out.print("Digite a quantidade inicial desse produto: ");
+                        totalOfProduct = console.nextInt();
+                        totalOfProducts.add(totalOfProduct);
+                        System.out.print("Digite o valor desse produto: ");
+                        valueOfProduct = console.nextDouble();
+                        values.add(valueOfProduct );
+                        System.out.print("\n");
+                        System.out.print(separator);
+                        System.out.println("Adicionado a lista de produtos: \n" +
+                                productName + " | " +
+                                totalOfProduct + " | " +
+                                valueOfProduct);
+                        System.out.println(separator);
+                    } else {
+                        System.out.println(productName + " já cadastrado.");
+                    }
                 break;
                 case 2:
                     System.out.print(separator);
